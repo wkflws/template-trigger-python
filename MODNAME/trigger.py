@@ -1,13 +1,15 @@
 from typing import Any, Optional
 
 from wkflws.events import Event
-from wkflws.http import http_method, Request
+from wkflws.http import http_method, Request, Response
 from wkflws.triggers.webhook import WebhookTrigger
 
 from . import __identifier__, __version__
 
 
-async def process_webhook_request(request: Request) -> Optional[Event]:
+async def process_webhook_request(
+    request: Request, response: Response
+) -> Optional[Event]:
     """Accept and process an HTTP request returning a event for the bus."""
 
     # Most webhooks include a header with a unique id that can be used as the event's
