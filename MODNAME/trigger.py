@@ -1,3 +1,4 @@
+import json
 from typing import Any, Optional
 
 from wkflws.events import Event
@@ -22,7 +23,7 @@ async def process_webhook_request(request: Request) -> Optional[Event]:
     return Event(identifier, request.headers, data)
 
 
-async def accept_event(event: Event) -> tuple[Optional[str], dict[str, Any]]::
+async def accept_event(event: Event) -> tuple[Optional[str], dict[str, Any]]:
     """Accept and process data from the event bus."""
     return "MODNAME.node", event.data
 
