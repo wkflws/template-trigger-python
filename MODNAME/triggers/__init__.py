@@ -25,7 +25,7 @@ async def process_webhook_request(request: Request) -> Optional[Event]:
 
 async def accept_event(event: Event) -> tuple[Optional[str], dict[str, Any]]:
     """Accept and process data from the event bus."""
-    return "MODNAME.node", event.data
+    return "MODNAME.triggers.node", event.data
 
 
 my_webhook_trigger = WebhookTrigger(
