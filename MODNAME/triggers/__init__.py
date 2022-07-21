@@ -5,7 +5,7 @@ from wkflws.events import Event
 from wkflws.http import http_method, Request, Response
 from wkflws.triggers.webhook import WebhookTrigger
 
-from . import __identifier__, __version__
+from .. import __identifier__, __version__
 
 
 async def process_webhook_request(
